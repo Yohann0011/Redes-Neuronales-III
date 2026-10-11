@@ -1,0 +1,12 @@
+# Datos descargados por los notebooks
+mnist.npz
+data/
+*.npz
+
+# Entornos y caches
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+venv/
+.env
+.DS_Store

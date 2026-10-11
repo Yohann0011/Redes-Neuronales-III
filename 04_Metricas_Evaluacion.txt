@@ -1,0 +1,53 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791728399.944964     530 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791728402.108397     530 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+TensorFlow: 2.21.0 | Keras: 3.15.1
+Train: (48000, 28, 28) | Dev: (12000, 28, 28) | Test: (10000, 28, 28)
+
+Muestra de entrenamiento del modelo final: (12000, 28, 28)
+Épocas ejecutadas: 8 | pesos restaurados a la mejor época (Dev loss = 0.1326 )
+Predicciones sobre Test: (10000,)
+Primeras 20 predicciones: [7, 2, 1, 0, 4, 1, 4, 9, 5, 9, 0, 6, 9, 0, 1, 5, 9, 7, 3, 4]
+Primeras 20 clases reales: [7, 2, 1, 0, 4, 1, 4, 9, 5, 9, 0, 6, 9, 0, 1, 5, 9, 7, 3, 4]
+Coincidencias en la muestra: 20 de 20
+=== MÉTRICAS FINALES SOBRE TEST ===
+        metrica  resultado
+       Accuracy     0.9644
+Precision macro     0.9643
+   Recall macro     0.9640
+       F1 macro     0.9641
+
+Accuracy   : 0.9644
+Precision  : 0.9643
+Recall     : 0.964
+F1 macro   : 0.9641
+              precision    recall  f1-score   support
+
+           0     0.9766    0.9796    0.9781       980
+           1     0.9732    0.9930    0.9830      1135
+           2     0.9676    0.9535    0.9605      1032
+           3     0.9551    0.9693    0.9622      1010
+           4     0.9710    0.9552    0.9630       982
+           5     0.9680    0.9507    0.9593       892
+           6     0.9549    0.9718    0.9633       958
+           7     0.9745    0.9650    0.9697      1028
+           8     0.9361    0.9620    0.9489       974
+           9     0.9664    0.9395    0.9528      1009
+
+    accuracy                         0.9644     10000
+   macro avg     0.9643    0.9640    0.9641     10000
+weighted avg     0.9645    0.9644    0.9644     10000
+
+
+Clase con menor F1: dígito 8 (F1 = 0.9489) frente al macro 0.9641
+Total de errores en Test: 356 de 10000
+La confusión más frecuente fue: 4 clasificado como 9 (20 veces)
+
+Top 5 confusiones (real -> predicho, casos):
+   4 -> 9 : 20
+   9 -> 8 : 14
+   9 -> 4 : 14
+   5 -> 8 : 14
+   9 -> 3 : 13
+Imagen analizada: índice 571 | confianza del modelo: 0.6726

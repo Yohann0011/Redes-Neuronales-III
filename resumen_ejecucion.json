@@ -1,0 +1,27 @@
+{
+  "01_Datos_Baseline_Keras.ipynb": {
+    "figuras": 0,
+    "errores": 0,
+    "caracteres": 3273
+  },
+  "02_Optimizacion_Hiperparametros.ipynb": {
+    "figuras": 0,
+    "errores": 0,
+    "caracteres": 1494
+  },
+  "03_Regularizacion.ipynb": {
+    "figuras": 0,
+    "errores": 0,
+    "caracteres": 3167
+  },
+  "04_Metricas_Evaluacion.ipynb": {
+    "figuras": 0,
+    "errores": 0,
+    "caracteres": 2588
+  },
+  "05_PyTorch_Opcional.ipynb": {
+    "figuras": 0,
+    "errores": 0,
+    "caracteres": 785
+  }
+}

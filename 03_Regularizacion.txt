@@ -1,0 +1,54 @@
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791728550.784347     676 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1791728552.950071     676 port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+TensorFlow: 2.21.0 | Keras: 3.15.1
+Train: (48000, 28, 28) | Dev: (12000, 28, 28) | Test: (10000, 28, 28)
+
+Muestra del experimento: (12000, 28, 28) (12000,)
+Clases en la muestra   : [1184 1349 1192 1226 1168 1084 1184 1253 1170 1190]
+Función de entrenamiento con parada temprana definida
+Parámetros sin regularización: 535,818
+  Pesos restaurados a la mejor época
+
+=== SIN REGULARIZACIÓN (15 épocas completas) ===
+ Época  Train loss  Train acc   Dev loss   Dev acc
+     1      0.4293     0.8720     0.2198    0.9377
+     2      0.1670     0.9491     0.1992    0.9389
+     3      0.0964     0.9721     0.1524    0.9562
+     4      0.0700     0.9773     0.1345    0.9609
+     5      0.0349     0.9899     0.1499    0.9602
+     6      0.0216     0.9944     0.1347    0.9658
+     7      0.0137     0.9965     0.1401    0.9657
+     8      0.0170     0.9943     0.1457    0.9648
+     9      0.0100     0.9977     0.1357    0.9679
+    10      0.0026     0.9998     0.1400    0.9690
+    11      0.0013     1.0000     0.1392    0.9698
+    12      0.0005     1.0000     0.1421    0.9692
+    13      0.0004     1.0000     0.1430    0.9704
+    14      0.0003     1.0000     0.1469    0.9702
+    15      0.0002     1.0000     0.1488    0.9708
+Parámetros regularizado: 535,818
+
+  Early stopping en la época 9 (Dev loss sin mejorar 2 épocas seguidas)
+  Pesos restaurados a la mejor época
+
+=== REGULARIZADO (L2 + Dropout + Early Stopping) ===
+Épocas ejecutadas: 9 de 20 solicitadas
+ Época  Train loss  Train acc   Dev loss   Dev acc
+     1      0.5434     0.8317     0.2226    0.9325
+     2      0.2284     0.9305     0.1944    0.9377
+     3      0.1586     0.9512     0.1603    0.9505
+     4      0.1219     0.9617     0.1397    0.9563
+     5      0.0956     0.9694     0.1294    0.9621
+     6      0.0719     0.9768     0.1334    0.9618
+     7      0.0675     0.9781     0.1287    0.9641
+     8      0.0540     0.9828     0.1300    0.9647
+     9      0.0452     0.9843     0.1352    0.9669
+=== COMPARACIÓN EN DEV ===
+                       modelo  epocas  train_acc  dev_loss  dev_acc  brecha_train_dev
+           Sin regularización      15     0.9912    0.1345   0.9609            0.0302
+L2 + Dropout + Early Stopping       9     0.9948    0.1287   0.9641            0.0308
+
+La brecha Train-Dev mide el overfitting: cuanto menor, mejor generaliza el modelo.
+Métricas calculadas con los pesos restaurados a la mejor época (restore_best_weights).
